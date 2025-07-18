@@ -1,0 +1,40 @@
+/* HomePage.css */
+
+.main {
+  background-color: #f9f9f9;
+  padding-top: 20px;
+}
+
+.section-title {
+  color: #333;
+  font-weight: bold;
+  font-size: 24px;
+}
+
+.product-default {
+  border: 1px solid #ddd;
+  padding: 10px;
+  border-radius: 8px;
+  transition: box-shadow 0.3s ease;
+}
+
+.product-default:hover {
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.product-title a {
+  color: #222;
+  text-decoration: none;
+}
+
+.product-title a:hover {
+  color: #e74c3c;
+}
+
+.label-hot {
+  background-color: red;
+  color: white;
+  padding: 2px 6px;
+  border-radius: 3px;
+  font-size: 12px;
+}
