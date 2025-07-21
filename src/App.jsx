@@ -12,6 +12,9 @@ import NewsPage from './Pages/News/NewPage.jsx';
 import OrderDetailPage from './Pages/OrderDetails/OrderDetail.jsx';
 import Login from './Pages/Logins/Login.jsx';
 import Register from './Pages/Registers/Register.jsx';
+import FavoritePage from './Pages/Favorites/Favorite.jsx';
+import Cart from './Pages/CartPages/Cart.jsx';
+import AccountPage from './Pages/AccountPages/AccountPage.jsx';
 
 function App() {
   return (
@@ -26,6 +29,9 @@ function App() {
         <Route path="/tai-khoan/lich-su-giao-dich" element={<OrderDetailPage />} />
         <Route path="/dang-nhap" element={<Login />} />
         <Route path="/dang-ky" element={<Register />} />
+        <Route path="/yeu-thich" element={<FavoritePage />} />
+        <Route path="/gio-hang" element={<Cart />} />
+        <Route path="/tai-khoan" element={<AccountPage />} />
 
       </Routes>
       <Footer />
