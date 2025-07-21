@@ -9,6 +9,9 @@ import Product from './Pages/Products/ProductPage.jsx';
 import News from './Pages/News/NewPage.jsx';
 import ContactPage from './Pages/Contacts/Contact.jsx';
 import NewsPage from './Pages/News/NewPage.jsx';
+import OrderDetailPage from './Pages/OrderDetails/OrderDetail.jsx';
+import Login from './Pages/Logins/Login.jsx';
+import Register from './Pages/Registers/Register.jsx';
 
 function App() {
   return (
@@ -20,6 +23,10 @@ function App() {
         <Route path="/san-pham" element={<Product />} />
         <Route path="/tin-tuc" element={<NewsPage />} />
         <Route path="/lien-he" element={<ContactPage />} />
+        <Route path="/tai-khoan/lich-su-giao-dich" element={<OrderDetailPage />} />
+        <Route path="/dang-nhap" element={<Login />} />
+        <Route path="/dang-ky" element={<Register />} />
+
       </Routes>
       <Footer />
     </>

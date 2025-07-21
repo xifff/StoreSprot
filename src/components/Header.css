@@ -38,3 +38,26 @@
   width: 100%;
   background-color: #007bff;
 }
+
+.header .nav-link {
+  color: #333;
+  text-decoration: none;
+  padding: 8px 12px;
+}
+
+.header .nav-link.active {
+  font-weight: bold;
+  color: #007bff;
+}
+
+.auth-buttons .btn {
+  font-size: 14px;
+  padding: 6px 12px;
+  border-radius: 4px;
+}
+
+.container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
