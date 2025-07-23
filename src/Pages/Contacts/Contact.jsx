@@ -1,5 +1,5 @@
 import React from 'react';
-
+import './Contact.css';
 const ContactPage = () => {
   return (
     <main className="main" id="main-content">
