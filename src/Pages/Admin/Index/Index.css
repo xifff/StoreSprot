@@ -1,0 +1,122 @@
+/* AdminDashboard.css */
+
+/* Header */
+.page-header {
+  margin-bottom: 2rem;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid #ddd;
+}
+
+.page-title {
+  font-size: 24px;
+  font-weight: bold;
+  margin: 0;
+}
+
+.breadcrumb {
+  display: flex;
+  gap: 8px;
+  font-size: 14px;
+  color: #6c757d;
+}
+
+.breadcrumb a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.breadcrumb a:hover {
+  text-decoration: underline;
+}
+
+/* Card tổng quan */
+.summary-card {
+  display: flex;
+  align-items: center;
+  background: #fff;
+  padding: 16px;
+  border-radius: 8px;
+  box-shadow: 0 0 6px rgba(0, 0, 0, 0.08);
+  transition: transform 0.2s;
+}
+
+.summary-card:hover {
+  transform: translateY(-3px);
+}
+
+.summary-icon {
+  font-size: 24px;
+  padding: 12px;
+  border-radius: 50%;
+  color: #fff;
+  margin-right: 16px;
+}
+
+.summary-text {
+  flex: 1;
+}
+
+.summary-title {
+  font-size: 14px;
+  font-weight: 600;
+  color: #555;
+}
+
+.summary-value {
+  font-size: 20px;
+  font-weight: bold;
+  color: #222;
+  margin-top: 4px;
+}
+
+/* Icon màu */
+.bg-primary {
+  background-color: #007bff;
+}
+
+.bg-success {
+  background-color: #28a745;
+}
+
+.bg-warning {
+  background-color: #ffc107;
+  color: #000;
+}
+
+.bg-danger {
+  background-color: #dc3545;
+}
+
+.bg-info {
+  background-color: #17a2b8;
+}
+
+.bg-secondary {
+  background-color: #6c757d;
+}
+
+/* Chart section */
+.chart-section {
+  background: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 0 6px rgba(0, 0, 0, 0.08);
+}
+
+.chart-title {
+  font-size: 18px;
+  font-weight: 600;
+  margin-bottom: 1rem;
+}
+
+/* Responsive Grid */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 16px;
+}
+
+/* Table/Report area (tuỳ chọn) */
+.report-section {
+  margin-top: 2rem;
+}

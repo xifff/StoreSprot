@@ -15,7 +15,12 @@ import Register from './Pages/Registers/Register.jsx';
 import FavoritePage from './Pages/Favorites/Favorite.jsx';
 import Cart from './Pages/CartPages/Cart.jsx';
 import AccountPage from './Pages/AccountPages/AccountPage.jsx';
-
+import AdminDashboard from './Pages/Admin/Index/Index.jsx';
+import CategoryListPage from './Pages/Admin/Category/Category.jsx';
+import OrderListPage from './Pages/Admin/OrderList/OrderListPage.jsx';
+import PostListPage from './Pages/Admin/PostList/PostListPage.jsx';
+import ProductListPage from './Pages/Admin/Product/ProductListPage.jsx';
+import UserList from './Pages/Admin/UserList/UserListPage.jsx';
 function App() {
   return (
     <>
@@ -32,7 +37,13 @@ function App() {
         <Route path="/yeu-thich" element={<FavoritePage />} />
         <Route path="/gio-hang" element={<Cart />} />
         <Route path="/tai-khoan" element={<AccountPage />} />
-
+        {/* Admin Routes */}
+        <Route path="/admin" element={<AdminDashboard />} />
+        <Route path="/admin/categories" element={<CategoryListPage />} />
+        <Route path="/admin/orders" element={<OrderListPage />} />
+        <Route path="/admin/posts" element={<PostListPage />} />
+        <Route path='/admin/products' element={<ProductListPage />} />
+        <Route path="/admin/users" element={<UserList />} />
       </Routes>
       <Footer />
     </>
