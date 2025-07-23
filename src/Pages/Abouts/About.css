@@ -1,0 +1,574 @@
+/* src/Pages/Abouts/About.css */
+
+
+/* --- GENERAL STYLES --- */
+
+.main {
+    background-color: #f8f9fa;
+    font-family: "Poppins", sans-serif;
+    padding: 30px 0;
+    color: #333;
+}
+
+
+/* --- BREADCRUMB STYLING --- */
+
+.breadcrumb-nav {
+    background-color: transparent;
+    padding: 15px 0;
+    border-bottom: 1px solid #eee;
+    margin-bottom: 30px;
+}
+
+.breadcrumb {
+    background-color: transparent;
+    margin-bottom: 0;
+    padding-left: 0;
+    justify-content: flex-start;
+    display: flex;
+}
+
+.breadcrumb-item {
+    display: inline-block;
+    font-size: 15px;
+}
+
+.breadcrumb-item a {
+    color: #555;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.breadcrumb-item a:hover {
+    color: #f26c4f;
+}
+
+.breadcrumb-item.active {
+    color: #999;
+    font-weight: 500;
+}
+
+
+/* --- ICON STYLES (EMOJI / FONT AWESOME) --- */
+
+
+/* Existing icons */
+
+.icon-home::before {
+    content: "🏠";
+    margin-right: 6px;
+}
+
+.icon-quality::before {
+    content: "✨";
+    margin-right: 10px;
+    font-size: 28px;
+    color: #f26c4f;
+    display: block;
+    margin-bottom: 10px;
+}
+
+.icon-style::before {
+    content: "👟";
+    margin-right: 10px;
+    font-size: 28px;
+    color: #144aeb;
+    display: block;
+    margin-bottom: 10px;
+}
+
+.icon-customer-service::before {
+    content: "🤝";
+    margin-right: 10px;
+    font-size: 28px;
+    color: #28a745;
+    display: block;
+    margin-bottom: 10px;
+}
+
+
+/* NEW ICONS for Why Choose Us section */
+
+
+/* You can replace these emojis with Font Awesome classes if you're using it (e.g., .fas.fa-star) */
+
+.icon-quality-alt::before {
+    content: "🌟";
+    font-size: 40px;
+    color: #144aeb;
+    margin-bottom: 15px;
+    display: block;
+}
+
+.icon-design-alt::before {
+    content: "🎨";
+    font-size: 40px;
+    color: #f26c4f;
+    margin-bottom: 15px;
+    display: block;
+}
+
+.icon-experience-alt::before {
+    content: "👍";
+    font-size: 40px;
+    color: #28a745;
+    margin-bottom: 15px;
+    display: block;
+}
+
+.icon-secure-payment::before {
+    content: "🔒";
+    font-size: 40px;
+    color: #007bff;
+    margin-bottom: 15px;
+    display: block;
+}
+
+
+/* Blue for security */
+
+.icon-fast-shipping::before {
+    content: "🚚";
+    font-size: 40px;
+    color: #ffc107;
+    margin-bottom: 15px;
+    display: block;
+}
+
+
+/* Yellow for speed */
+
+.icon-support::before {
+    content: "💬";
+    font-size: 40px;
+    color: #6f42c1;
+    margin-bottom: 15px;
+    display: block;
+}
+
+
+/* Purple for support */
+
+
+/* --- ABOUT PAGE CONTENT STYLING --- */
+
+.about-page-content {
+    padding: 20px 0;
+}
+
+.about-title {
+    font-size: 42px;
+    font-weight: 700;
+    color: #144aeb;
+    text-align: center;
+    margin-bottom: 60px;
+    position: relative;
+    padding-bottom: 15px;
+}
+
+.about-title::after {
+    content: '';
+    position: absolute;
+    left: 50%;
+    bottom: 0;
+    transform: translateX(-50%);
+    width: 100px;
+    height: 4px;
+    background-color: #f26c4f;
+    border-radius: 2px;
+}
+
+.about-section {
+    margin-bottom: 80px;
+    padding: 30px;
+    background-color: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+}
+
+.about-section:last-child {
+    margin-bottom: 40px;
+}
+
+.about-section h2.section-title {
+    font-size: 34px;
+    font-weight: 700;
+    color: #144aeb;
+    text-align: center;
+    margin-bottom: 40px;
+    position: relative;
+    padding-bottom: 10px;
+}
+
+.about-section h2.section-title::after {
+    content: '';
+    position: absolute;
+    left: 50%;
+    bottom: 0;
+    transform: translateX(-50%);
+    width: 70px;
+    height: 3px;
+    background-color: #f26c4f;
+    border-radius: 2px;
+}
+
+.about-section.introduction h2 {
+    font-size: 36px;
+    color: #333;
+    margin-bottom: 25px;
+    line-height: 1.3;
+}
+
+.about-section p {
+    font-size: 17px;
+    line-height: 1.8;
+    color: #555;
+    margin-bottom: 20px;
+    text-align: justify;
+    /* Default to justify */
+}
+
+
+/* For sections with centered text, override justify */
+
+.about-section.team p,
+.about-section.call-to-action p {
+    text-align: center;
+}
+
+.about-image {
+    border-radius: 10px;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+    object-fit: cover;
+    width: 100%;
+    height: 350px;
+}
+
+
+/* Vision & Mission Section */
+
+.vision-mission h3 {
+    font-size: 24px;
+    font-weight: 600;
+    color: #f26c4f;
+    margin-bottom: 15px;
+    text-align: left;
+}
+
+.vision-mission .row>div {
+    padding: 0 20px;
+}
+
+
+/* Values Section (Existing, adjusted slightly for consistency) */
+
+.values .row {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 30px;
+    /* margin: 0 -15px; /* Removed this as gap handles it better */
+}
+
+.values .col-md-4 {
+    flex: 0 0 calc(33.333% - 20px);
+    max-width: calc(33.333% - 20px);
+    padding: 0;
+    margin-bottom: 0;
+}
+
+.value-item {
+    text-align: center;
+    padding: 30px 20px;
+    border: 1px solid #eee;
+    border-radius: 10px;
+    background-color: #fff;
+    transition: all 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    height: 100%;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+}
+
+.value-item:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 12px 25px rgba(0, 0, 0, 0.15);
+    border-color: #f26c4f;
+}
+
+.value-item i {
+    /* Existing value item icon size/color */
+    font-size: 50px;
+    margin-bottom: 15px;
+    color: #144aeb;
+}
+
+.value-item h3 {
+    font-size: 22px;
+    font-weight: 700;
+    color: #144aeb;
+    margin-bottom: 10px;
+}
+
+.value-item p {
+    font-size: 15px;
+    line-height: 1.6;
+    color: #666;
+    text-align: center;
+    flex-grow: 1;
+}
+
+
+/* --- WHY CHOOSE US Section (NEW) --- */
+
+.why-choose-us .row {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 30px;
+    /* Consistent gap */
+}
+
+.why-choose-us .col-md-4 {
+    flex: 0 0 calc(33.333% - 20px);
+    max-width: calc(33.333% - 20px);
+    padding: 0;
+    margin-bottom: 0;
+    /* Handled by gap */
+}
+
+
+/* Specific styling for choice-item (similar to value-item but for new icons) */
+
+.choice-item {
+    text-align: center;
+    padding: 30px 20px;
+    border: 1px solid #eee;
+    border-radius: 10px;
+    background-color: #fff;
+    transition: all 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    height: 100%;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+}
+
+.choice-item:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 12px 25px rgba(0, 0, 0, 0.15);
+    border-color: #144aeb;
+    /* Different hover color for this section */
+}
+
+.choice-item i {
+    /* Icons defined above in ICON STYLES */
+}
+
+.choice-item h3 {
+    font-size: 22px;
+    font-weight: 700;
+    color: #144aeb;
+    margin-bottom: 10px;
+}
+
+.choice-item p {
+    font-size: 15px;
+    line-height: 1.6;
+    color: #666;
+    text-align: center;
+    flex-grow: 1;
+}
+
+
+/* --- BRAND STORY Section (NEW) --- */
+
+.brand-story h3 {
+    font-size: 28px;
+    font-weight: 600;
+    color: #144aeb;
+    margin-bottom: 20px;
+    line-height: 1.3;
+}
+
+.brand-story p {
+    text-align: justify;
+    /* Ensure justify for story text */
+}
+
+
+/* Call to Action Section */
+
+.call-to-action {
+    background-color: #e6f7ff;
+    padding: 50px;
+    border-radius: 12px;
+    margin-top: 60px;
+    border: 1px solid #cceeff;
+}
+
+.call-to-action p {
+    font-size: 20px;
+    color: #333;
+    margin-bottom: 30px;
+    font-weight: 500;
+}
+
+.btn-primary-about {
+    background-color: #f26c4f;
+    border: none;
+    padding: 14px 30px;
+    font-weight: 600;
+    font-size: 18px;
+    color: #fff;
+    border-radius: 6px;
+    text-decoration: none;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    display: inline-block;
+    letter-spacing: 0.5px;
+}
+
+.btn-primary-about:hover {
+    background-color: #d6553e;
+    transform: translateY(-2px);
+}
+
+.mb-8 {
+    margin-bottom: 80px;
+}
+
+
+/* --- RESPONSIVE ADJUSTMENTS --- */
+
+@media (min-width: 768px) {
+    .values .col-md-4,
+    .why-choose-us .col-md-4 {
+        margin-bottom: 0 !important;
+    }
+}
+
+@media (max-width: 991.98px) {
+    .about-title {
+        font-size: 38px;
+    }
+    .about-section h2.section-title {
+        font-size: 30px;
+    }
+    .about-section.introduction h2 {
+        font-size: 30px;
+        text-align: center;
+    }
+    .about-section.introduction .col-md-6:first-child,
+    .about-section.introduction .col-md-6:last-child {
+        padding-right: 15px;
+        padding-left: 15px;
+    }
+    .about-image {
+        margin-top: 30px;
+        height: 300px;
+    }
+    .value-item,
+    .choice-item {
+        /* Apply to both value and choice items */
+        padding: 25px 15px;
+    }
+    .call-to-action {
+        padding: 40px;
+    }
+    .values .col-md-4,
+    .why-choose-us .col-md-4 {
+        /* 2 cột trên tablet */
+        flex: 0 0 calc(50% - 20px);
+        max-width: calc(50% - 20px);
+    }
+}
+
+@media (max-width: 767.98px) {
+    .about-title {
+        font-size: 32px;
+        margin-bottom: 40px;
+    }
+    .about-title::after {
+        width: 80px;
+    }
+    .about-section {
+        margin-bottom: 50px;
+        padding: 20px;
+    }
+    .about-section h2.section-title {
+        font-size: 26px;
+        margin-bottom: 30px;
+    }
+    .about-section.introduction h2 {
+        font-size: 28px;
+        text-align: center;
+    }
+    .about-section p {
+        font-size: 16px;
+        text-align: left;
+        /* Default to left on mobile for readability */
+    }
+    /* Override for specific sections to keep centered */
+    .about-section.team p,
+    .about-section.call-to-action p {
+        text-align: center;
+    }
+    .about-image {
+        margin-top: 25px;
+        height: 250px;
+    }
+    .vision-mission .row>div {
+        margin-bottom: 30px;
+    }
+    .value-item,
+    .choice-item {
+        /* Apply to both */
+        margin-bottom: 20px;
+    }
+    .call-to-action {
+        padding: 30px;
+        margin-top: 40px;
+    }
+    .call-to-action p {
+        font-size: 16px;
+    }
+    .btn-primary-about {
+        padding: 10px 20px;
+        font-size: 16px;
+    }
+    .mb-8 {
+        margin-bottom: 40px;
+    }
+    .values .col-md-4,
+    .why-choose-us .col-md-4 {
+        /* 1 cột trên mobile */
+        flex: 0 0 100%;
+        max-width: 100%;
+    }
+    /* Adjust order for introduction section on small screens */
+    .about-section.introduction .col-md-6.order-1 {
+        margin-bottom: 20px;
+        /* Space between image and text on mobile */
+    }
+}
+
+@media (max-width: 575.98px) {
+    .about-title {
+        font-size: 28px;
+    }
+    .about-section h2.section-title {
+        font-size: 22px;
+    }
+    .about-section.introduction h2 {
+        font-size: 24px;
+    }
+    .about-image {
+        height: 200px;
+    }
+    .call-to-action {
+        padding: 20px;
+    }
+}

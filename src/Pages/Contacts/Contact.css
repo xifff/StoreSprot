@@ -1,0 +1,228 @@
+/* src/Pages/Contacts/Contact.css */
+
+.main {
+    background-color: #fff;
+    font-family: "Poppins", sans-serif;
+    padding: 30px 0;
+}
+
+.breadcrumb-nav {
+    background-color: transparent;
+    padding: 10px 0;
+}
+
+.breadcrumb {
+    background-color: transparent;
+    margin-bottom: 0;
+    padding-left: 0;
+}
+
+.breadcrumb-item {
+    display: inline-block;
+    font-size: 15px;
+}
+
+.breadcrumb-item a {
+    color: #000;
+    text-decoration: none;
+}
+
+.breadcrumb-item.active {
+    color: #999;
+}
+
+
+/* Map */
+
+#map {
+    width: 100%;
+    height: 450px;
+    margin: 30px 0;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    overflow: hidden;
+}
+
+
+/* Icon emoji instead of font-awesome */
+
+.icon-home::before {
+    content: "🏠";
+    margin-right: 6px;
+}
+
+.icon-mobile::before {
+    content: "📱";
+    margin-right: 10px;
+    font-size: 18px;
+}
+
+.icon-mail-alt::before {
+    content: "✉️";
+    margin-right: 10px;
+    font-size: 18px;
+}
+
+.icon-location-pin::before {
+    content: "📍";
+    margin-right: 10px;
+    font-size: 18px;
+}
+
+
+/* Contact Info - điều chỉnh lại */
+
+.contact-info {
+    margin-top: 15px;
+}
+
+.contact-info div {
+    display: flex;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+.contact-info a {
+    color: #333;
+    text-decoration: none;
+}
+
+
+/* THÊM HOẶC CHỈNH SỬA PHẦN NÀY */
+
+.contact-info p {
+    color: #333333;
+    /* Đặt màu chữ là đen hoặc xám đậm */
+    margin: 0;
+    /* Đảm bảo không có margin mặc định từ thẻ p */
+}
+
+.contact-info-wrapper-col {
+    margin-top: 40px;
+}
+
+
+/* Điều chỉnh lại cho tiêu đề khi chúng ở gần nhau hơn */
+
+.contact-section-bottom .light-title {
+    margin-top: 20px;
+}
+
+
+/* Form - các thuộc tính chung của form control */
+
+.light-title {
+    font-size: 15px;
+    font-weight: 600;
+    margin-bottom: 20px;
+    color: #144aeb;
+    border-bottom: 2px solid #f26c4f;
+    padding-bottom: 5px;
+    display: inline-block;
+}
+
+
+/* Kích thước font cho tiêu đề form, nếu bạn đã dùng cách 2 trước đó */
+
+.light-title.form-title {
+    font-size: 18px;
+    /* Giữ nguyên kích thước nhỏ bạn đã chỉnh */
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+.form-group label {
+    font-weight: 500;
+    margin-bottom: 5px;
+    display: block;
+    color: #333333;
+    /* THAY ĐỔI MÀU Ở ĐÂY - Màu đen hoặc xám đậm */
+}
+
+.form-control {
+    background-color: #ffffff;
+    /* Đặt màu nền của ô nhập liệu là màu trắng */
+    color: #333;
+    /* Màu chữ bên trong ô input (xám đậm dễ đọc) */
+    border-radius: 4px;
+    box-shadow: none;
+    border: 1px solid #a0a0a0;
+    /* Đặt màu viền của ô nhập liệu là màu xám trung tính */
+    width: 100%;
+    padding: 8px;
+    font-size: 14px;
+    /* Thêm transition để hiệu ứng focus mượt mà */
+    transition: border-color 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+}
+
+.form-control:focus {
+    border-color: #f26c4f;
+    /* Màu viền khi ô được focus (màu cam giống nút gửi) */
+    outline: none;
+    /* Loại bỏ outline mặc định của trình duyệt */
+    box-shadow: 0 0 0 0.2rem rgba(242, 108, 79, 0.25);
+    /* Thêm box-shadow nhẹ màu cam khi focus */
+}
+
+.form-footer {
+    margin-top: 20px;
+    text-align: left;
+}
+
+.btn-primary {
+    background-color: #f26c4f;
+    border: none;
+    padding: 10px 20px;
+    font-weight: 500;
+    color: #fff;
+    border-radius: 4px;
+    transition: 0.3s;
+    cursor: pointer;
+}
+
+.btn-primary:hover {
+    background-color: #d6553e;
+}
+
+.mb-8 {
+    margin-bottom: 60px;
+}
+
+
+/* Styles cho ô "Viết cho chúng tôi" */
+
+.contact-form-card {
+    background-color: #ffffff;
+    /* Nền trắng */
+    padding: 30px;
+    /* Thêm khoảng đệm bên trong */
+    border-radius: 8px;
+    /* Bo tròn góc */
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    /* Đổ bóng nhẹ để tạo "khuôn" */
+    margin-bottom: 20px;
+    /* Khoảng cách dưới nếu trên mobile */
+    border: 1px solid #e0e0e0;
+    /* Viền mỏng để rõ ràng hơn */
+}
+
+
+/* Responsive adjustments using Bootstrap's grid system */
+
+@media (min-width: 768px) {
+    .contact-info-wrapper-col {
+        margin-top: 0;
+        padding-left: 30px;
+    }
+    .contact-section-bottom {
+        display: flex;
+        align-items: flex-start;
+        margin-top: 40px;
+    }
+    .contact-form-card {
+        margin-bottom: 0;
+        /* Loại bỏ margin-bottom khi hiển thị cạnh nhau */
+    }
+}
