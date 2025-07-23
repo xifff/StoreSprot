@@ -53,42 +53,49 @@ const AdminDashboard = () => {
             color: "secondary",
             link: "/admin/orders"
           },
-         
           {
             title: "Tổng số user",
             icon: "fas fa-user-injured",
             id: "countUser",
             color: "danger",
             link: "/admin/users"
+          },
+          {
+            title: "Tổng số khuyến mãi",
+            icon: "fas fa-tags",
+            id: "promotion-count",
+            color: "info",
+            link: "/admin/promotions"
           }
-        ].map((item, idx) => (
-          <div className="col-xl-4" key={idx}>
-            <section className={`card card-featured-left card-featured-${item.color} mb-3`}>
-              <div className="card-body">
-                <div className="widget-summary">
-                  <div className="widget-summary-col widget-summary-col-icon">
-                    <div className={`summary-icon bg-${item.color}`}>
-                      <i className={item.icon}></i>
-                    </div>
-                  </div>
-                  <div className="widget-summary-col">
-                    <div className="summary">
-                      <h4 className="title">{item.title}</h4>
-                      <div className="info">
-                        <strong className="amount" id={item.id}></strong>
+        ]
+          .map((item, idx) => (
+            <div className="col-xl-4" key={idx}>
+              <section className={`card card-featured-left card-featured-${item.color} mb-3`}>
+                <div className="card-body">
+                  <div className="widget-summary">
+                    <div className="widget-summary-col widget-summary-col-icon">
+                      <div className={`summary-icon bg-${item.color}`}>
+                        <i className={item.icon}></i>
                       </div>
                     </div>
-                    <div className="summary-footer">
-                      <a className="text-muted text-uppercase" href={item.link}>
-                        (Xem chi tiết)
-                      </a>
+                    <div className="widget-summary-col">
+                      <div className="summary">
+                        <h4 className="title">{item.title}</h4>
+                        <div className="info">
+                          <strong className="amount" id={item.id}></strong>
+                        </div>
+                      </div>
+                      <div className="summary-footer">
+                        <a className="text-muted text-uppercase" href={item.link}>
+                          (Xem chi tiết)
+                        </a>
+                      </div>
                     </div>
                   </div>
                 </div>
-              </div>
-            </section>
-          </div>
-        ))}
+              </section>
+            </div>
+          ))}
       </div>
 
       <div className="row pt-4">

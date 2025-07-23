@@ -1,0 +1,46 @@
+.page-header {
+  padding: 20px 0;
+  border-bottom: 1px solid #ddd;
+}
+
+.breadcrumbs {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  gap: 8px;
+}
+
+.breadcrumbs li a {
+  color: #333;
+  text-decoration: none;
+}
+
+.card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.badge-success {
+  background-color: #28a745;
+  color: white;
+  padding: 4px 8px;
+  border-radius: 4px;
+}
+
+.badge-danger {
+  background-color: #dc3545;
+  color: white;
+  padding: 4px 8px;
+  border-radius: 4px;
+}
+
+.edit-row, .delete-row {
+  color: #007bff;
+  cursor: pointer;
+}
+
+.delete-row {
+  color: #dc3545;
+}
