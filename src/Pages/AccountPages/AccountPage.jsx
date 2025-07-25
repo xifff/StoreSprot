@@ -28,57 +28,89 @@ const AccountPage = () => {
   });
 
   return (
-    <div className="account-page container mt-4">
-      <h2 className="mb-4">Tài Khoản Của Tôi</h2>
-      <div className="row">
-        <div className="col-md-4 text-center">
-          <img src={user.avatar} alt="Avatar" className="avatar mb-3" />
-          <h5>{user.hoten}</h5>
-          <p>{user.email}</p>
-          <button className="btn btn-outline-primary mb-2">Cập nhật thông tin</button>
-          <br />
-          <Link to="/tai-khoan/lich-su-giao-dich" className="btn btn-outline-secondary">Xem chi tiết đơn hàng</Link>
-        </div>
+    <div className="account-page mt-4">
+      <h2 className="mb-4 text-center">Tài Khoản Của Tôi</h2>
+      <div className='container'>
+        <div className="row">
+          <div className="col-md-4">
+  <div className="user-sidebar text-center p-4">
+    <img src={user.avatar} alt="Avatar" className="avatar mb-3" />
+    <h5 className="user-name">{user.hoten}</h5>
+    <p className="user-email">{user.email}</p>
 
-        <div className="col-md-8">
-          <div className="info-box mb-4">
-            <h5>Thông Tin Cá Nhân</h5>
-            <div className="info-row"><strong>Họ tên:</strong> {user.hoten}</div>
-            <div className="info-row"><strong>Email:</strong> {user.email}</div>
-            <div className="info-row"><strong>Số điện thoại:</strong> {user.sdt}</div>
-            <div className="info-row"><strong>CCCD:</strong> {user.cmnd}</div>
-          </div>
+    <button className="btn btn-outline-primary w-100 mb-2">
+      Cập nhật thông tin
+    </button>
 
-          <div className="info-box">
-            <h5>Địa Chỉ Giao Hàng</h5>
-            <table className="table table-bordered">
-              <thead>
-                <tr>
-                  <th>STT</th>
-                  <th>Chi tiết</th>
-                  <th>Tỉnh</th>
-                  <th>Quận</th>
-                  <th>Phường</th>
-                </tr>
-              </thead>
-              <tbody>
-                {user.diachi.map((addr, index) => (
-                  <tr key={addr.id}>
-                    <td>{index + 1}</td>
-                    <td>{addr.diachiDetail}</td>
-                    <td>{addr.nameProvince}</td>
-                    <td>{addr.nameDistrict}</td>
-                    <td>{addr.nameWard}</td>
-                  </tr>
-                ))}
-              </tbody>
-            </table>
-            <button className="btn btn-success">Thêm địa chỉ mới</button>
+    <Link to="/tai-khoan/lich-su-giao-dich" className="btn btn-outline-secondary w-100">
+      Xem chi tiết đơn hàng
+    </Link>
+  </div>
+</div>
+
+          <div className="col-md-8">
+            <div className="info-box mb-4">
+  <h5>Thông Tin Cá Nhân</h5>
+  <div className="table-container">
+    <table className="table table-bordered">
+      <tbody>
+        <tr>
+          <th>Họ tên</th>
+          <td>{user.hoten}</td>
+        </tr>
+        <tr>
+          <th>Email</th>
+          <td>{user.email}</td>
+        </tr>
+        <tr>
+          <th>Số điện thoại</th>
+          <td>{user.sdt}</td>
+        </tr>
+        <tr>
+          <th>CCCD</th>
+          <td>{user.cmnd}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+
+            <div className="info-box">
+  <h5>Địa Chỉ Giao Hàng</h5>
+  <div className="table-container">
+    <table className="table table-bordered">
+      <thead>
+        <tr>
+          <th>STT</th>
+          <th>Chi tiết</th>
+          <th>Tỉnh</th>
+          <th>Quận</th>
+          <th>Phường</th>
+        </tr>
+      </thead>
+      <tbody>
+        {user.diachi.map((addr, index) => (
+          <tr key={addr.id}>
+            <td>{index + 1}</td>
+            <td>{addr.diachiDetail}</td>
+            <td>{addr.nameProvince}</td>
+            <td>{addr.nameDistrict}</td>
+            <td>{addr.nameWard}</td>
+          </tr>
+        ))}
+      </tbody>
+    </table>
+  </div>
+  <button className="btn btn-success mt-3">Thêm địa chỉ mới</button>
+</div>
+
           </div>
         </div>
       </div>
     </div>
   );
 };
+
 
 export default AccountPage;

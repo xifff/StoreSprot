@@ -1,93 +1,452 @@
-.order-detail-page {
-  max-width: 800px;
-  margin: 2rem auto;
-  padding: 1rem;
-  background: #fff;
-  border-radius: 8px;
+/* General Body Styling */
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f0f2f5;
+    /* Nền màu xám nhạt cho toàn bộ trang */
+    margin: 0;
+    padding: 0;
+    line-height: 1.6;
+    color: #333;
 }
 
+
+/* Order Detail Page Container */
+
+.order-detail-page {
+    max-width: 900px;
+    margin: 3rem auto;
+    /* Căn giữa div theo chiều ngang với margin tự động */
+    padding: 2.5rem;
+    /* Tăng padding để có thêm không gian */
+    background: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+    /* Bóng đổ mạnh hơn một chút */
+    animation: fadeInContainer 0.5s ease-out;
+    /* Thêm hiệu ứng fade-in cho container */
+}
+
+
+/* Keyframe for container fade-in */
+
+@keyframes fadeInContainer {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
+/* Headings */
+
+h2 {
+    font-size: 2rem;
+    /* Tiêu đề lớn hơn */
+    margin-bottom: 1.8rem;
+    color: #2c3e50;
+    /* Màu chuyên nghiệp, tối hơn */
+    text-align: center;
+    /* Căn giữa tiêu đề */
+    border-bottom: 2px solid #e0e0e0;
+    /* Gạch chân tinh tế */
+    padding-bottom: 1rem;
+}
+
+
+/* Order Status Section */
+
 .order-status {
-  margin-bottom: 1rem;
+    font-size: 1.2rem;
+    /* Chữ lớn hơn một chút */
+    margin-bottom: 2.5rem;
+    text-align: center;
+    /* Căn giữa văn bản trạng thái */
+    padding: 0.8rem 1.5rem;
+    background-color: #eaf6ff;
+    /* Nền màu xanh nhạt cho trạng thái */
+    border-left: 5px solid #007bff;
+    /* Thanh màu xanh làm điểm nhấn */
+    border-radius: 8px;
+    display: inline-block;
+    /* Để nền và viền phù hợp với nội dung */
+    margin-left: auto;
+    /* Căn giữa với margin tự động */
+    margin-right: auto;
+    /* Căn giữa với margin tự động */
+    display: block;
+    /* Đảm bảo hành vi khối để căn giữa bằng margin auto */
+    color: #0056b3;
+    font-weight: 500;
 }
 
 .status {
-  font-weight: bold;
-  color: #007bff;
+    font-weight: bold;
+    color: #28a745;
+    /* Màu xanh lá cây cho "Đang xử lý" - năng động hơn */
+    text-transform: uppercase;
+    /* Viết hoa trạng thái */
 }
 
+
+/* Order Content Sections */
+
+.order-content>div {
+    margin-bottom: 2rem;
+    /* Khoảng cách nhất quán giữa các phần chính */
+}
+
+
+/* Product Section */
+
 .order-content .product {
-  display: flex;
-  gap: 1rem;
-  margin-bottom: 1rem;
+    display: flex;
+    gap: 1.8rem;
+    /* Tăng khoảng cách */
+    margin-bottom: 2rem;
+    align-items: center;
+    padding-bottom: 2rem;
+    border-bottom: 1px solid #e0e0e0;
+    /* Viền nhạt hơn */
 }
 
 .product img {
-  width: 100px;
-  height: 100px;
-  object-fit: cover;
+    width: 130px;
+    /* Hình ảnh lớn hơn một chút */
+    height: 130px;
+    border-radius: 10px;
+    /* Góc bo mềm hơn */
+    object-fit: cover;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    /* Bóng đổ cải tiến */
+    transition: transform 0.3s ease;
 }
 
-.shipping-info, .total-price {
-  margin-bottom: 1rem;
+.product img:hover {
+    transform: scale(1.03);
+    /* Phóng to nhẹ khi di chuột */
 }
+
+.product-info h4 {
+    font-size: 1.35rem;
+    /* Tên sản phẩm lớn hơn */
+    margin-bottom: 0.7rem;
+    color: #2c3e50;
+    font-weight: 600;
+}
+
+.product-info p {
+    font-size: 1rem;
+    /* Kích thước chữ rõ ràng hơn */
+    color: #666;
+    margin: 0.4rem 0;
+}
+
+
+/* Shipping Info & Total Price Sections */
+
+.shipping-info,
+.total-price {
+    background: #fdfdfd;
+    /* Nền rất nhạt */
+    border-radius: 10px;
+    /* Góc bo mềm hơn */
+    padding: 1.5rem;
+    /* Nhiều padding hơn */
+    margin-bottom: 2rem;
+    border: 1px solid #e9ecef;
+    /* Viền tinh tế */
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.04);
+    /* Bóng đổ nhẹ */
+}
+
+.shipping-info h4 {
+    margin-bottom: 1rem;
+    color: #2c3e50;
+    font-size: 1.25rem;
+    border-bottom: 1px dashed #e0e0e0;
+    /* Dấu gạch ngang phân cách */
+    padding-bottom: 0.5rem;
+}
+
+.shipping-info p,
+.total-price p {
+    font-size: 1rem;
+    margin: 0.5rem 0;
+    color: #555;
+}
+
+.total-price {
+    text-align: right;
+    /* Căn chỉnh tổng giá về bên phải */
+    background-color: #fdfcee;
+    /* Nền hơi khác cho tổng tiền */
+    border: 1px solid #ffeeba;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+}
+
+.total-price p strong {
+    font-size: 1.3rem;
+    /* Tổng giá lớn hơn */
+    color: #d35400;
+    /* Màu cam để nhấn mạnh */
+    font-weight: 700;
+}
+
+
+/* Order Actions Buttons */
 
 .order-actions {
-  display: flex;
-  gap: 1rem;
+    display: flex;
+    gap: 1.2rem;
+    /* Tăng khoảng cách giữa các nút */
+    flex-wrap: wrap;
+    justify-content: center;
+    /* Căn giữa các nút */
+    margin-top: 2.5rem;
+    padding-top: 1.5rem;
+    border-top: 1px solid #e0e0e0;
+    /* Dấu phân cách phía trên các nút */
 }
 
 .btn {
-  padding: 0.5rem 1rem;
-  cursor: pointer;
-  border: none;
-  border-radius: 4px;
+    padding: 0.8rem 1.6rem;
+    /* Nhiều padding hơn cho vùng chạm lớn hơn */
+    border-radius: 30px;
+    /* Bo tròn hơn */
+    font-weight: 600;
+    /* Chữ đậm hơn */
+    font-size: 1rem;
+    /* Kích thước chữ rõ ràng hơn */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    /* Bóng đổ tinh tế cho các nút */
+    min-width: 160px;
+    /* Đảm bảo chiều rộng nút nhất quán */
+    text-transform: uppercase;
+    /* Viết hoa chữ trên nút */
+    letter-spacing: 0.5px;
+}
+
+.btn:hover {
+    transform: translateY(-2px);
+    /* Hiệu ứng di chuột rõ rệt hơn */
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
+    /* Bóng đổ mạnh hơn khi di chuột */
+    opacity: 1;
+    /* Đảm bảo độ mờ hoàn toàn */
 }
 
 .btn-danger {
-  background: #dc3545;
-  color: white;
+    background: #e74c3c;
+    /* Màu đỏ phẳng */
+    color: white;
+}
+
+.btn-danger:hover {
+    background: #c0392b;
+    /* Màu đỏ sẫm hơn khi di chuột */
 }
 
 .btn-warning {
-  background: #ffc107;
-  color: black;
+    background: #f39c12;
+    /* Màu cam phẳng */
+    color: white;
+    /* Chữ trắng để tương phản tốt hơn */
+}
+
+.btn-warning:hover {
+    background: #e67e22;
+    /* Màu cam sẫm hơn khi di chuột */
 }
 
 .btn-primary {
-  background: #007bff;
-  color: white;
+    background: #3498db;
+    /* Màu xanh lam phẳng */
+    color: white;
 }
 
+.btn-primary:hover {
+    background: #2980b9;
+    /* Màu xanh lam sẫm hơn khi di chuột */
+}
+
+
+/* Modal Styling */
+
 .modal-backdrop {
-  position: fixed;
-  top: 0; left: 0;
-  right: 0; bottom: 0;
-  background: rgba(0,0,0,0.5);
-  display: flex;
-  align-items: center;
-  justify-content: center;
+    background: rgba(0, 0, 0, 0.6);
+    /* Nền tối hơn */
 }
 
 .modal {
-  background: white;
-  padding: 1rem;
-  border-radius: 6px;
-  width: 300px;
+    padding: 2rem;
+    /* Nhiều padding hơn */
+    border-radius: 12px;
+    width: 400px;
+    /* Modal rộng hơn một chút */
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+    /* Bóng đổ modal mạnh hơn */
+}
+
+.modal h5 {
+    font-size: 1.3rem;
+    margin-bottom: 1.5rem;
+    color: #333;
+    text-align: center;
 }
 
 .modal input {
-  width: 100%;
-  padding: 0.5rem;
-  margin: 0.5rem 0;
+    padding: 0.85rem;
+    /* Nhiều padding hơn */
+    border: 1px solid #ced4da;
+    /* Viền nhạt hơn */
+    border-radius: 8px;
+    /* Góc bo mềm hơn */
+    margin-bottom: 1rem;
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.modal input:focus {
+    border-color: #80bdff;
+    outline: 0;
+    box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
 }
 
 .modal-buttons {
-  display: flex;
-  justify-content: flex-end;
-  gap: 1rem;
+    margin-top: 1.5rem;
+    justify-content: space-evenly;
+    /* Chia đều không gian các nút */
+}
+
+.modal-buttons .btn {
+    min-width: 100px;
+    /* Chiều rộng tối thiểu nhỏ hơn cho các nút modal */
+    box-shadow: none;
+    /* Không có bóng đổ cho các nút modal */
+}
+
+.modal-buttons .btn:first-child {
+    background-color: #6c757d;
+    /* Màu xám cho nút 'Đóng' */
+    color: white;
+}
+
+.modal-buttons .btn:first-child:hover {
+    background-color: #5a6268;
 }
 
 .error {
-  color: red;
-  font-size: 0.9rem;
+    color: #dc3545;
+    /* Màu đỏ cho lỗi */
+    font-size: 0.9rem;
+    margin-top: -0.5rem;
+    /* Kéo lên gần input hơn */
+    margin-bottom: 1rem;
+    text-align: center;
+    font-weight: 500;
+}
+
+
+/* Responsive Adjustments */
+
+@media (max-width: 768px) {
+    .order-detail-page {
+        margin: 1.5rem auto;
+        padding: 1.5rem;
+    }
+    h2 {
+        font-size: 1.6rem;
+    }
+    .order-status {
+        font-size: 1.1rem;
+    }
+    .order-content .product {
+        flex-direction: column;
+        align-items: center;
+        /* Căn giữa các mục trong bố cục cột */
+        text-align: center;
+    }
+    .product img {
+        width: 100px;
+        height: 100px;
+        margin-bottom: 0.8rem;
+    }
+    .product-info h4 {
+        font-size: 1.15rem;
+    }
+    .product-info p {
+        font-size: 0.9rem;
+    }
+    .shipping-info,
+    .total-price {
+        padding: 1.2rem;
+    }
+    .total-price p strong {
+        font-size: 1.15rem;
+    }
+    .order-actions {
+        flex-direction: column;
+        /* Xếp chồng các nút theo chiều dọc */
+        align-items: stretch;
+        /* Kéo giãn các nút ra toàn bộ chiều rộng */
+    }
+    .btn {
+        width: 100%;
+        /* Nút full width */
+        min-width: unset;
+        /* Bỏ giới hạn chiều rộng tối thiểu */
+        margin-bottom: 0.8rem;
+        /* Khoảng cách giữa các nút được xếp chồng */
+    }
+    .modal {
+        width: 90%;
+        /* Làm modal đáp ứng */
+        margin: 0 1rem;
+        /* Thêm margin hai bên */
+    }
+}
+
+@media (max-width: 480px) {
+    .order-detail-page {
+        padding: 1rem;
+    }
+    h2 {
+        font-size: 1.4rem;
+    }
+    .order-status {
+        font-size: 1rem;
+    }
+    .product img {
+        width: 80px;
+        height: 80px;
+    }
+    .product-info h4 {
+        font-size: 1rem;
+    }
+    .btn {
+        padding: 0.7rem 1.2rem;
+        font-size: 0.9rem;
+    }
+    .modal {
+        padding: 1.5rem;
+    }
+    .modal h5 {
+        font-size: 1.1rem;
+    }
+}
+
+.me-1 {
+    margin-right: 0.25rem;
+}
+
+.me-2 {
+    margin-right: 0.5rem;
+}
+
+.text-primary {
+    color: #007bff;
 }

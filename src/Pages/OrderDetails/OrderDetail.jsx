@@ -1,4 +1,12 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import {
+  faTruck,
+  faUndo,
+  faTimesCircle,
+  faTimes,
+  faCheckCircle
+} from "@fortawesome/free-solid-svg-icons";
 
 const OrderDetailPage = () => {
   const [order] = useState({
@@ -26,7 +34,7 @@ const OrderDetailPage = () => {
   };
 
   const confirmReturn = () => {
-    if (!note) {
+    if (!note.trim()) {
       setError("Vui lòng nhập lý do trả hàng");
       return;
     }
@@ -36,7 +44,10 @@ const OrderDetailPage = () => {
 
   return (
     <div className="order-detail-page">
-      <h2>Chi tiết đơn hàng #{order.id}</h2>
+      <h2>
+        <FontAwesomeIcon icon={faTruck} className="me-2 text-primary" />
+        Chi tiết đơn hàng #{order.id}
+      </h2>
 
       <div className="order-status">
         Trạng thái: <span className="status">{status}</span>
@@ -62,15 +73,25 @@ const OrderDetailPage = () => {
         <div className="total-price">
           <p>Tạm tính: {order.productPrice.toLocaleString()}₫</p>
           <p>Giảm giá: {(order.productPrice - order.totalPrice).toLocaleString()}₫</p>
-          <p><strong>Thành tiền: {order.totalPrice.toLocaleString()}₫</strong></p>
+          <p>
+            <strong>
+              Thành tiền: {order.totalPrice.toLocaleString()}₫
+            </strong>
+          </p>
         </div>
 
         <div className="order-actions">
           {order.canCompleted && (
-            <button className="btn btn-danger" onClick={() => setShowModal(true)}>Yêu cầu trả hàng</button>
+            <button className="btn btn-danger" onClick={() => setShowModal(true)}>
+              <FontAwesomeIcon icon={faUndo} className="me-2" />
+              Yêu cầu trả hàng
+            </button>
           )}
           {order.canCancel && (
-            <button className="btn btn-warning" onClick={cancelOrder}>Hủy đơn hàng</button>
+            <button className="btn btn-warning" onClick={cancelOrder}>
+              <FontAwesomeIcon icon={faTimesCircle} className="me-2" />
+              Hủy đơn hàng
+            </button>
           )}
         </div>
       </div>
@@ -79,9 +100,13 @@ const OrderDetailPage = () => {
       {showModal && (
         <div className="modal-backdrop">
           <div className="modal">
-            <h5>Lý do trả hàng</h5>
+            <h5>
+              <FontAwesomeIcon icon={faUndo} className="me-2 text-primary" />
+              Lý do trả hàng
+            </h5>
             <input
               type="text"
+              placeholder="Nhập lý do trả hàng..."
               value={note}
               onChange={(e) => {
                 setNote(e.target.value);
@@ -90,8 +115,14 @@ const OrderDetailPage = () => {
             />
             {error && <div className="error">{error}</div>}
             <div className="modal-buttons">
-              <button className="btn" onClick={() => setShowModal(false)}>Đóng</button>
-              <button className="btn btn-primary" onClick={confirmReturn}>Xác nhận</button>
+              <button className="btn" onClick={() => setShowModal(false)}>
+                <FontAwesomeIcon icon={faTimes} className="me-1" />
+                Đóng
+              </button>
+              <button className="btn btn-primary" onClick={confirmReturn}>
+                <FontAwesomeIcon icon={faCheckCircle} className="me-1" />
+                Xác nhận
+              </button>
             </div>
           </div>
         </div>
@@ -99,4 +130,5 @@ const OrderDetailPage = () => {
     </div>
   );
 };
+
 export default OrderDetailPage;
