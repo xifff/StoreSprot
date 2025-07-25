@@ -1,0 +1,393 @@
+/* src/Components/Footer/Footer.css */
+
+
+/* --- CSS Variables (Consistent with Header for brand colors) --- */
+
+:root {
+    --primary-color: #f26c4f;
+    /* Cam chủ đạo */
+    --secondary-color: #144aeb;
+    /* Xanh phụ trợ */
+    --text-color: #333;
+    /* Màu chữ chung cho nội dung chính */
+    --footer-bg-dark: #1a1a1a;
+    /* Nền footer chính rất tối */
+    --footer-text-light: #cccccc;
+    /* Màu chữ sáng trên nền tối */
+    --footer-link-light: #ffffff;
+    /* Màu link mặc định */
+    --footer-bottom-bg: #0d0d0d;
+    /* Nền cho phần bản quyền, tối hơn chút */
+    --footer-border-color: rgba(255, 255, 255, 0.1);
+    /* Đường viền mờ */
+    --transition-speed: 0.3s;
+    /* Tốc độ chuyển động chung */
+}
+
+
+/* --- Main Footer Section --- */
+
+.footer {
+    background-color: var(--footer-bg-dark);
+    color: var(--footer-text-light);
+    padding-top: 60px;
+    font-family: 'Poppins', sans-serif;
+    box-shadow: 0 -5px 20px rgba(0, 0, 0, 0.2);
+    margin-top: 60px;
+}
+
+.footer .container {
+    border-bottom: 1px solid var(--footer-border-color);
+    padding-bottom: 40px;
+}
+
+
+/* --- Footer Logo & Description --- */
+
+.footer-logo {
+    font-size: 2.2rem;
+    font-weight: 700;
+    color: var(--footer-link-light);
+    margin-bottom: 25px;
+    text-transform: uppercase;
+    letter-spacing: 0.8px;
+}
+
+.footer-description {
+    font-size: 0.95rem;
+    line-height: 1.8;
+    margin-bottom: 30px;
+    color: var(--footer-text-light);
+}
+
+
+/* --- Social Icons (Font Awesome) --- */
+
+.social-icons {
+    display: flex;
+    gap: 15px;
+    margin-top: 20px;
+}
+
+.social-icons a {
+    color: var(--footer-text-light);
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    border: 1px solid var(--footer-border-color);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: all var(--transition-speed) ease;
+    text-decoration: none;
+    font-size: 1.2rem;
+    /* Kích thước icon Font Awesome */
+}
+
+.social-icons a:hover {
+    color: var(--primary-color);
+    background-color: rgba(255, 255, 255, 0.08);
+    border-color: var(--primary-color);
+    transform: translateY(-5px) scale(1.05);
+}
+
+
+/* Đảm bảo Font Awesome SVG nằm giữa link */
+
+.social-icons a .svg-inline--fa {
+    vertical-align: middle;
+}
+
+
+/* --- Footer Titles --- */
+
+.footer-title {
+    font-size: 1.3rem;
+    font-weight: 600;
+    color: var(--footer-link-light);
+    margin-bottom: 30px;
+    position: relative;
+    padding-bottom: 10px;
+    text-transform: uppercase;
+}
+
+.footer-title::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 60px;
+    height: 3px;
+    background-color: var(--primary-color);
+    border-radius: 1.5px;
+}
+
+
+/* --- Footer Links --- */
+
+.footer-links li {
+    margin-bottom: 12px;
+}
+
+.footer-links a {
+    color: var(--footer-text-light);
+    text-decoration: none;
+    font-size: 0.95rem;
+    transition: all var(--transition-speed) ease;
+    display: inline-block;
+}
+
+.footer-links a:hover {
+    color: var(--primary-color);
+    transform: translateX(8px);
+}
+
+
+/* --- Footer Contact Info --- */
+
+.footer-contact-info p {
+    font-size: 0.95rem;
+    margin-bottom: 15px;
+    line-height: 1.6;
+    display: flex;
+    align-items: flex-start;
+    color: var(--footer-text-light);
+}
+
+
+/* Style cho icon Font Awesome trong thông tin liên hệ */
+
+.footer-contact-info .info-icon {
+    font-size: 1.1rem;
+    width: 25px;
+    /* Đảm bảo căn chỉnh đều */
+    text-align: center;
+    margin-right: 10px;
+    color: var(--primary-color);
+    /* Màu của icon */
+    flex-shrink: 0;
+    /* Ngăn icon bị co lại */
+}
+
+.footer-contact-info a {
+    color: var(--footer-text-light);
+    text-decoration: none;
+    transition: color var(--transition-speed) ease;
+}
+
+.footer-contact-info a:hover {
+    color: var(--primary-color);
+}
+
+
+/* --- Newsletter Form --- */
+
+.newsletter-text {
+    font-size: 0.95rem;
+    margin-bottom: 20px;
+    color: var(--footer-text-light);
+}
+
+.newsletter-form .form-control {
+    border-radius: 5px 0 0 5px;
+    border: 1px solid var(--footer-border-color);
+    background-color: rgba(255, 255, 255, 0.08);
+    color: #fff;
+    padding: 12px 18px;
+    font-size: 0.95rem;
+}
+
+.newsletter-form .form-control::placeholder {
+    color: rgba(255, 255, 255, 0.6);
+}
+
+.newsletter-form .form-control:focus {
+    background-color: rgba(255, 255, 255, 0.15);
+    border-color: var(--primary-color);
+    box-shadow: none;
+}
+
+.btn-newsletter {
+    background-color: var(--primary-color);
+    color: #fff;
+    border: 1px solid var(--primary-color);
+    border-radius: 0 5px 5px 0;
+    font-weight: 600;
+    padding: 12px 25px;
+    transition: all var(--transition-speed) ease;
+}
+
+.btn-newsletter:hover {
+    background-color: #d6553e;
+    /* Màu cam tối hơn một chút */
+    border-color: #d6553e;
+    color: #fff;
+}
+
+
+/* --- Payment Icons (Font Awesome) --- */
+
+
+/* Uncomment và tùy chỉnh nếu bạn sử dụng biểu tượng thanh toán */
+
+
+/*
+.payment-icons {
+    display: flex;
+    gap: 15px;
+    margin-top: 30px;
+    justify-content: flex-start; // Or center if needed
+}
+.payment-icon {
+    font-size: 2.2rem; // Kích thước lớn hơn cho biểu tượng thanh toán
+    color: var(--footer-text-light);
+    opacity: 0.7;
+    transition: opacity var(--transition-speed) ease, color var(--transition-speed) ease;
+}
+.payment-icon:hover {
+    opacity: 1;
+    color: var(--primary-color); // Hoặc một màu khác
+}
+*/
+
+
+/* --- Footer Bottom (Copyright) --- */
+
+.footer-bottom {
+    background-color: var(--footer-bottom-bg);
+    padding-top: 20px;
+    padding-bottom: 20px;
+    margin-top: 40px;
+}
+
+.footer-bottom p {
+    font-size: 0.85rem;
+    color: var(--footer-text-light);
+    opacity: 0.7;
+}
+
+
+/* --- Responsive Adjustments --- */
+
+@media (max-width: 991.98px) {
+    .footer .container {
+        padding-top: 40px;
+        padding-bottom: 25px;
+    }
+    .footer-logo {
+        font-size: 2rem;
+    }
+    .footer-title {
+        font-size: 1.2rem;
+        margin-bottom: 25px;
+    }
+    .footer-title::after {
+        width: 50px;
+    }
+    .footer-links li,
+    .footer-contact-info p {
+        margin-bottom: 10px;
+    }
+    .newsletter-form .form-control,
+    .btn-newsletter {
+        padding: 10px 15px;
+    }
+    .social-icons {
+        justify-content: center;
+    }
+}
+
+@media (max-width: 767.98px) {
+    .footer .container {
+        padding-top: 30px;
+        padding-bottom: 15px;
+        border-bottom: none;
+    }
+    .footer-logo {
+        font-size: 1.8rem;
+        text-align: center;
+        margin-bottom: 15px;
+    }
+    .footer-description {
+        text-align: center;
+        font-size: 0.85rem;
+    }
+    .social-icons {
+        margin-bottom: 30px;
+        gap: 10px;
+        justify-content: center;
+    }
+    .social-icons a {
+        font-size: 1.1rem;
+        /* Kích thước icon Font Awesome nhỏ hơn trên mobile */
+        width: 35px;
+        height: 35px;
+    }
+    .footer-title {
+        font-size: 1.1rem;
+        text-align: center;
+        margin-top: 25px;
+        margin-bottom: 15px;
+    }
+    .footer-title::after {
+        left: 50%;
+        transform: translateX(-50%);
+    }
+    .footer-links,
+    .footer-contact-info,
+    .newsletter-form,
+    .newsletter-text {
+        text-align: center;
+    }
+    .footer-links a {
+        transform: none;
+        padding-left: 0;
+    }
+    .footer-contact-info p {
+        justify-content: center;
+    }
+    .newsletter-form .input-group {
+        flex-wrap: wrap;
+        justify-content: center;
+        margin-bottom: 20px !important;
+    }
+    .newsletter-form .form-control {
+        border-radius: 5px;
+        max-width: 280px;
+        margin-bottom: 10px;
+    }
+    .btn-newsletter {
+        border-radius: 5px;
+        width: 100%;
+        max-width: 180px;
+    }
+    .footer-bottom {
+        margin-top: 30px;
+        padding-top: 15px;
+        padding-bottom: 15px;
+    }
+}
+
+@media (max-width: 575.98px) {
+    .footer {
+        padding-top: 40px;
+    }
+    .footer-logo {
+        font-size: 1.6rem;
+    }
+    .footer-title {
+        font-size: 1rem;
+    }
+    .footer-description,
+    .newsletter-text,
+    .footer-links a,
+    .footer-contact-info p,
+    .footer-bottom p {
+        font-size: 0.8rem;
+    }
+    .social-icons a {
+        font-size: 1rem;
+        width: 30px;
+        height: 30px;
+    }
+}

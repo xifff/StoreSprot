@@ -1,64 +1,363 @@
-.header {
-  background-color: #fff;
-  border-bottom: 1px solid #ddd;
-  position: sticky;
-  top: 0;
-  z-index: 1000;
+/* src/Components/Header/Header.css */
+
+
+/* --- CSS Variables (Optional but Recommended) --- */
+
+:root {
+    --primary-color: #f26c4f;
+    /* Cam */
+    --secondary-color: #144aeb;
+    /* Xanh */
+    --text-color: #333;
+    --light-gray: #f8f9fa;
+    --border-color: #585656;
+    --hover-color: #d6553e;
+    /* Cam đậm hơn khi hover */
+    --transition-speed: 0.3s;
 }
+
+
+/* --- General Header Styles --- */
+
+.header {
+    background-color: #fff;
+    border-bottom: 1px solid var(--border-color);
+    position: sticky;
+    /* Make it sticky */
+    top: 0;
+    z-index: 1020;
+    /* Ensure it stays above other content */
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+    /* Subtle shadow */
+}
+
+.header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 15px;
+    /* Adjust padding */
+    padding-bottom: 15px;
+    /* Adjust padding */
+}
+
+
+/* --- Logo --- */
 
 .logo {
-  font-size: 1.5rem;
-  font-weight: bold;
+    font-size: 1.8rem;
+    /* Larger font size */
+    font-weight: 700;
+    /* Bolder */
+    color: var(--secondary-color);
+    /* Use secondary color for logo */
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
 }
 
-.nav {
-  display: flex;
-  gap: 1rem;
+.logo a {
+    color: inherit;
+    /* Inherit color from .logo */
+    text-decoration: none;
+    transition: color var(--transition-speed) ease;
+}
+
+.logo a:hover {
+    color: var(--primary-color);
+    /* Hover effect for logo */
+}
+
+
+/* --- Main Navigation Menu --- */
+
+.nav-menu {
+    /* This is for desktop, mobile will override */
+    flex-grow: 1;
+    /* Allows it to take available space */
+    justify-content: center;
+    /* Center the menu items */
+    gap: 30px;
+    /* More space between nav items */
 }
 
 .nav-link {
-  font-weight: 500;
-  color: #333;
-  text-decoration: none;
-  position: relative;
-  padding: 6px 10px;
+    font-weight: 600;
+    /* Bolder font */
+    color: var(--text-color);
+    text-decoration: none;
+    position: relative;
+    padding: 8px 0;
+    /* Vertical padding only, gap handles horizontal */
+    transition: color var(--transition-speed) ease;
 }
 
-.nav-link:hover,
+.nav-link:hover {
+    color: var(--primary-color);
+}
+
 .nav-link.active {
-  color: #007bff;
+    color: var(--primary-color);
 }
 
+.nav-link::after {
+    /* Underline effect for active/hover */
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    /* Position at the very bottom */
+    height: 2px;
+    width: 0;
+    /* Starts hidden */
+    background-color: var(--primary-color);
+    transition: width var(--transition-speed) ease;
+    /* Animate width */
+}
+
+.nav-link:hover::after,
 .nav-link.active::after {
-  content: '';
-  position: absolute;
-  left: 0;
-  bottom: -2px;
-  height: 2px;
-  width: 100%;
-  background-color: #007bff;
+    width: 100%;
+    /* Expands on hover/active */
 }
 
-.header .nav-link {
-  color: #333;
-  text-decoration: none;
-  padding: 8px 12px;
+
+/* --- Header Right Section (Icons + Auth Buttons) --- */
+
+.header-right {
+    gap: 20px;
+    /* Space between icons and buttons */
 }
 
-.header .nav-link.active {
-  font-weight: bold;
-  color: #007bff;
+.icon-link {
+    font-size: 1.2rem;
+    /* Larger icon size */
+    color: var(--text-color);
+    transition: color var(--transition-speed) ease, transform var(--transition-speed) ease;
 }
 
-.auth-buttons .btn {
-  font-size: 14px;
-  padding: 6px 12px;
-  border-radius: 4px;
+.icon-link:hover {
+    color: var(--primary-color);
+    transform: scale(1.1);
+    /* Subtle hover effect */
 }
 
-.container {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+
+/* Auth Buttons */
+
+.header-right .btn {
+    font-size: 0.9rem;
+    /* Slightly smaller font for buttons */
+    padding: 8px 15px;
+    /* Adjust padding */
+    border-radius: 5px;
+    /* More rounded corners */
+    font-weight: 600;
+    transition: all var(--transition-speed) ease;
 }
 
+.header-right .btn-outline-primary {
+    color: var(--primary-color);
+    border-color: var(--primary-color);
+    background-color: transparent;
+}
+
+.header-right .btn-outline-primary:hover {
+    background-color: var(--primary-color);
+    color: #fff;
+}
+
+.header-right .btn-primary {
+    background-color: var(--primary-color);
+    border-color: var(--primary-color);
+    color: #fff;
+}
+
+.header-right .btn-primary:hover {
+    background-color: var(--hover-color);
+    border-color: var(--hover-color);
+}
+
+
+/* --- Mobile Menu Toggle Button --- */
+
+.navbar-toggler {
+    border: none;
+    background-color: transparent;
+    padding: 5px;
+    font-size: 1.5rem;
+    /* Icon size */
+    cursor: pointer;
+}
+
+.navbar-toggler:focus {
+    box-shadow: none;
+    /* Remove focus outline */
+}
+
+
+/* --- Mobile Menu Overlay --- */
+
+.menu-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    /* Semi-transparent black */
+    z-index: 1030;
+    /* Below mobile menu content */
+    transition: opacity var(--transition-speed) ease;
+}
+
+
+/* --- Mobile Menu Content --- */
+
+.mobile-menu-content {
+    position: fixed;
+    top: 0;
+    right: -300px;
+    /* Start off-screen */
+    width: 300px;
+    /* Width of the mobile menu */
+    max-width: 80%;
+    /* Ensure it doesn't take too much space on small devices */
+    height: 100vh;
+    /* Full viewport height */
+    background-color: #fff;
+    z-index: 1040;
+    /* Above overlay */
+    box-shadow: -5px 0 15px rgba(0, 0, 0, 0.1);
+    transition: right var(--transition-speed) ease;
+    display: flex;
+    flex-direction: column;
+}
+
+.mobile-menu-content.active {
+    right: 0;
+    /* Slide in */
+}
+
+.mobile-menu-header {
+    border-bottom: 1px solid var(--border-color);
+    padding: 15px 20px;
+    background-color: var(--light-gray);
+}
+
+.mobile-menu-title {
+    font-size: 1.3rem;
+    font-weight: 700;
+    color: var(--text-color);
+}
+
+.close-menu-btn {
+    background: none;
+    border: none;
+    font-size: 1.5rem;
+    color: var(--text-color);
+    cursor: pointer;
+}
+
+.mobile-menu-links {
+    flex-grow: 1;
+    /* Takes remaining space */
+    padding: 20px;
+}
+
+.nav-link-mobile {
+    display: block;
+    /* Each link on new line */
+    padding: 12px 0;
+    color: var(--text-color);
+    text-decoration: none;
+    font-size: 1.1rem;
+    font-weight: 500;
+    border-bottom: 1px solid var(--border-color);
+    /* Separator between links */
+    transition: background-color var(--transition-speed) ease, color var(--transition-speed) ease;
+}
+
+.nav-link-mobile:last-child {
+    border-bottom: none;
+    /* No border for the last link */
+}
+
+.nav-link-mobile:hover,
+.nav-link-mobile.active {
+    color: var(--primary-color);
+    background-color: var(--light-gray);
+    padding-left: 10px;
+    /* Slight indentation on hover */
+}
+
+.mobile-menu-auth {
+    padding: 20px;
+    border-top: 1px solid var(--border-color);
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    /* Space between auth items */
+}
+
+.icon-link-mobile {
+    display: block;
+    padding: 10px 0;
+    color: var(--text-color);
+    text-decoration: none;
+    font-size: 1rem;
+    font-weight: 500;
+    margin-bottom: 5px;
+    transition: color var(--transition-speed) ease;
+}
+
+.icon-link-mobile:hover {
+    color: var(--primary-color);
+}
+
+.mobile-menu-auth .btn {
+    width: 100%;
+    /* Full width buttons */
+    margin-top: 10px;
+    font-size: 1rem;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+
+/* --- Responsive Adjustments --- */
+
+@media (max-width: 991.98px) {
+    /* Tablets and smaller (Bootstrap's lg breakpoint) */
+    /* Hide desktop menu and auth section */
+    .header .nav-menu,
+    .header .header-right {
+        display: none !important;
+    }
+    /* Show mobile toggler */
+    .navbar-toggler {
+        display: block !important;
+    }
+    .header .container {
+        justify-content: space-between;
+        /* Ensure logo and toggler are spaced */
+    }
+    .logo {
+        font-size: 1.5rem;
+        /* Adjust logo size for smaller screens */
+    }
+}
+
+@media (min-width: 992px) {
+    /* Desktop */
+    /* Hide mobile menu content */
+    .mobile-menu-content,
+    .menu-overlay,
+    .navbar-toggler {
+        display: none !important;
+    }
+    /* Ensure desktop menu and auth section are visible */
+    .header .nav-menu,
+    .header .header-right {
+        display: flex !important;
+    }
+}
