@@ -1,0 +1,31 @@
+.main-content {
+  padding: 20px;
+  background-color: #fff;
+  border-radius: 10px;
+}
+
+.page-header {
+  margin-bottom: 20px;
+}
+
+.breadcrumbs {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  gap: 5px;
+}
+
+.breadcrumbs li {
+  font-size: 14px;
+}
+
+.table th,
+.table td {
+  vertical-align: middle;
+  text-align: center;
+}
+
+.table img {
+  object-fit: cover;
+  border-radius: 5px;
+}

@@ -1,0 +1,17 @@
+.container {
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 10px;
+}
+
+.table th,
+.table td {
+  vertical-align: middle;
+  text-align: center;
+}
+
+.badge {
+  font-size: 0.9em;
+  padding: 5px 10px;
+  border-radius: 5px;
+}
