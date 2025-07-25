@@ -84,32 +84,29 @@ const HomePage = () => {
       </div>
 
       {/* Info Box */}
-      <div className="container">
-        <div className="info-boxes-slider owl-carousel owl-theme mb-2"
-          data-owl-options='{"dots": false, "loop": false, "responsive": {"576": {"items": 2}, "992": {"items": 3}}}'>
-          <div className="info-box info-box-icon-left">
-            <i className="icon-shipping"></i>
-            <div className="info-box-content">
-              <h4>FREE SHIPPING & RETURN</h4>
-              <p className="text-body">Miễn phí ship cho đơn hàng trị giá trên 500k.</p>
-            </div>
-          </div>
-          <div className="info-box info-box-icon-left">
-            <i className="icon-money"></i>
-            <div className="info-box-content">
-              <h4>MONEY BACK GUARANTEE</h4>
-              <p className="text-body">100% hoàn trả tiền nếu sai sót</p>
-            </div>
-          </div>
-          <div className="info-box info-box-icon-left">
-            <i className="icon-support"></i>
-            <div className="info-box-content">
-              <h4>ONLINE SUPPORT 24/7</h4>
-              <p className="text-body">Hỗ trợ 24/7.</p>
-            </div>
-          </div>
-        </div>
-      </div>
+      <div className="info-boxes-row mb-2">
+  <div className="info-box info-box-icon-left">
+    <i className="icon-shipping"></i>
+    <div className="info-box-content">
+      <h4>FREE SHIPPING & RETURN</h4>
+      <p className="text-body">Miễn phí ship cho đơn hàng trị giá trên 500k.</p>
+    </div>
+  </div>
+  <div className="info-box info-box-icon-left">
+    <i className="icon-money"></i>
+    <div className="info-box-content">
+      <h4>MONEY BACK GUARANTEE</h4>
+      <p className="text-body">100% hoàn trả tiền nếu sai sót</p>
+    </div>
+  </div>
+<div className="info-box info-box-icon-left">
+    <i className="icon-support"></i>
+    <div className="info-box-content">
+      <h4>ONLINE SUPPORT 24/7</h4>
+      <p className="text-body">Hỗ trợ 24/7.</p>
+    </div>
+  </div>
+</div>
 
       {/* Sản phẩm mới */}
       <Section title="Sản phẩm mới" products={newProducts} />
@@ -158,21 +155,24 @@ const Section = ({ title, products, showHot = false, showViews = false }) => (
   <section className="featured-products-section">
     <div className="container">
       <h2 className="section-title heading-border ls-20 border-0">{title}</h2>
-      <div className="products-slider custom-products owl-carousel owl-theme nav-outer show-nav-hover nav-image-center"
-        data-owl-options='{"dots": false, "nav": true}'>
+      <div className="products-grid">
         {products.map(product => (
           <div className="product-default" key={product.id}>
             <figure>
               <a href={`/${product.slug}/${product.id}`}>
                 <img style={{ height: 160 }} src={product.images} alt={product.name} />
               </a>
-              {showHot && <div className="label-group"><div className="product-label label-hot">HOT</div></div>}
+              {showHot && (
+                <div className="label-group">
+                  <div className="product-label label-hot">HOT</div>
+                </div>
+              )}
             </figure>
             <div className="product-details">
               <h3 className="product-title">
                 <a href={`/${product.slug}/${product.id}`}>{product.name}</a>
               </h3>
-              <div className="price-box">
+<div className="price-box">
                 {product.promotionPrice ? (
                   <>
                     <span className="product-price">{product.promotionPrice.toLocaleString()} đ</span>
