@@ -269,31 +269,45 @@
 
 /* --- Responsive Adjustments --- */
 
+
+/* --- Responsive chỉnh sửa: Liên Kết Nhanh + Thông Tin Liên Hệ nằm ngang --- */
+
+
+/* --- Responsive chỉnh sửa: Liên Kết Nhanh + Thông Tin Liên Hệ nằm ngang --- */
+
+
+/* 1. Xếp ngang các cột trên màn hình lớn */
+
+@media (min-width: 992px) {
+    .footer .footer-links-contact {
+        display: flex;
+        /* Xếp các cột ngang */
+        gap: 30px;
+        /* Tạo khoảng cách giữa các cột */
+    }
+    .footer .footer-links-contact .col-md-6 {
+        flex: 1 1 50%;
+        /* Chiều rộng mỗi cột chiếm 50% */
+        max-width: 50%;
+        /* Đảm bảo không vượt quá 50% */
+    }
+}
+
+
+/* 2. Sắp xếp dọc các cột trên màn hình nhỏ */
+
 @media (max-width: 991.98px) {
-    .footer .container {
-        padding-top: 40px;
-        padding-bottom: 25px;
+    .footer .footer-links-contact {
+        display: block;
+        /* Xếp dọc các cột */
     }
-    .footer-logo {
-        font-size: 2rem;
-    }
-    .footer-title {
-        font-size: 1.2rem;
-        margin-bottom: 25px;
-    }
-    .footer-title::after {
-        width: 50px;
-    }
-    .footer-links li,
-    .footer-contact-info p {
-        margin-bottom: 10px;
-    }
-    .newsletter-form .form-control,
-    .btn-newsletter {
-        padding: 10px 15px;
-    }
-    .social-icons {
-        justify-content: center;
+    .footer .footer-links-contact .col-md-6 {
+        flex: 1 1 100%;
+        /* Chiều rộng mỗi cột chiếm 100% */
+        max-width: 100%;
+        /* Đảm bảo không vượt quá 100% */
+        margin-bottom: 20px;
+        /* Tạo khoảng cách giữa các cột */
     }
 }
 

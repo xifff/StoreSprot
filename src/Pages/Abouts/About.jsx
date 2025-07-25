@@ -11,7 +11,7 @@ const About = () => (
           <li className="breadcrumb-item">
             <a href="/"><i className="icon-home"></i>Trang chủ</a>
           </li>
-          <li className="breadcrumb-item active" aria-current="page">Về Shop Shoes</li> {/* Đổi tiêu đề breadcrumb */}
+          <li className="breadcrumb-item active" aria-current="page">Về Shop</li> {/* Đổi tiêu đề breadcrumb */}
         </ol>
       </div>
     </nav>
