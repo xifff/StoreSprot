@@ -1,8 +1,9 @@
 import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
 import './AccountPage.css';
 
 const AccountPage = () => {
-  const [user, setUser] = useState({
+  const [user] = useState({
     hoten: 'Nguyễn Văn A',
     email: 'vana@gmail.com',
     sdt: '0987654321',
@@ -31,14 +32,12 @@ const AccountPage = () => {
       <h2 className="mb-4">Tài Khoản Của Tôi</h2>
       <div className="row">
         <div className="col-md-4 text-center">
-          <img
-            src={user.avatar}
-            alt="Avatar"
-            className="avatar mb-3"
-          />
+          <img src={user.avatar} alt="Avatar" className="avatar mb-3" />
           <h5>{user.hoten}</h5>
           <p>{user.email}</p>
-          <button className="btn btn-outline-primary">Cập nhật thông tin</button>
+          <button className="btn btn-outline-primary mb-2">Cập nhật thông tin</button>
+          <br />
+          <Link to="/tai-khoan/lich-su-giao-dich" className="btn btn-outline-secondary">Xem chi tiết đơn hàng</Link>
         </div>
 
         <div className="col-md-8">
